@@ -1,7 +1,7 @@
-\documentclass[a4]{article}
+\documentclass[8pt]{extarticle}
 \usepackage{multicol,caption}
 \usepackage[utf8]{inputenc}
-\usepackage[italian]{babel}
+\usepackage[english]{babel}
 \usepackage[a4paper, landscape, margin=1cm, footskip=0.7cm]{geometry}
 \usepackage{graphicx}
 \usepackage{lipsum}
@@ -19,6 +19,7 @@
 \usepackage[sfdefault]{roboto}
 \usepackage{enumitem}
 \usepackage[compact]{titlesec}
+
 
 \setenumerate{itemsep=0pt,topsep=0pt}
 \setitemize{itemsep=0pt, topsep=0pt}
@@ -784,18 +785,313 @@ for air conditioning, smoke detection, and fire suppression.
 \begin{center}
     \includegraphics[width=4cm]{dell-lc-management.jpg}
 \end{center}
-Monitoring Priorities for Systems Management
+\subsection{Ten Priorities for Systems Management}
+\paragraph{Operating System Performance and Availability}
+Monitoring processes should begin with the initial deployment
+of an OS, ensuring the installation was a success or identifying any errors. The ongoing availability
+of an OS must also be recorded and tracked by monitoring resources such as uptime and identifying
+the failover status of clustered servers. OS performance must be monitored in real-time by recording
+the status of system resources, including the load on CPUs, memory, and individual processes. Any
+system performance elements that exceed established thresholds need to be immediately reported
+to IT operations for prompt remediation. It is also essential to correlate OS performance with the
+performance of applications and other workloads. In particular, database performance issues (identified
+in error logs and job status reporting) can be difficult to resolve without mapping the issues to the
+performance of system resources (such as CPU and memory status).
+
+\paragraph{Server Hardware Status} All devices in a support stack must also be monitored to ensure their
+physical hardware components are functioning optimally. Wear-and-
+tear from continuous use and environmental conditions can degrade
+a system’s performance or cause it to fail outright. Catching potential
+hardware problems early will enable administrators to repair systems that
+are failing or move workloads to new systems before the issues become
+business impacting. Hardware components to monitor include the CPU,
+memory SIMMs, USB ports, and SCSI chains. Administrators should
+also be aware of which physical cable ports are in use and the status of
+any additional direct-attached devices.
+
+\begin{quote}
+Catching potential hardware problems early will enable administrators to repair systems that are failing or 
+move workloads to new systems before the issues become business impacting.
+\end{quote}
+
+
+\paragraph{Data and Storage Availability}
+Another key pillar in systems management is ensuring the high performance and availability of
+storage systems. This includes monitoring disk I/O performance, disk usage, and the integrity of the
+file systems. Paging and swapping metrics are also important to track, especially for environments
+that support dynamic data management systems, such as large SQL databases. Any storage devices
+that include RAID technology must also be monitored and alarmed so any faulty drives can be
+immediately replaced to ensure uninterrupted service. Storage Area Networks (SAN) and Network-
+Attached Storage (NAS) also require vigilant monitoring to ensure data is being transmitted reliably
+between storage devices.
+
+\paragraph{Directory Services} 
+Directory services (including Active Directory, LDAP, NIS, and DNS) provide centralized management
+and distribution capabilities for critical system, network, and user information that are commonly
+accessed by endpoints across the support stack. To ensure directory services are always accurate and
+up to date, all changes (adds, deletes and updates) must be tracked and reported. This includes
+monitoring for changes to both individual and group of users and systems. Details on change events
+should be tracked to add accountability to directory service management processes. These include the
+identification of who made the change and when it was made.
+
+\paragraph{Patches and Updates}
+All server software components – including operating systems, applications, drivers, and firmware –
+require periodic patching and updates to new editions. These are often released to resolve performance
+issues, security vulnerabilities, or code bugs, and are typically provisioned by IT operations. Since
+it is essential to ensure that all software elements are promptly updated to ensure their security and
+reliability, the availability of new patches and updates must be continuously tracked and then compared
+against the versions currently installed on all devices in the support stack. By alarming on patches and
+updates that need to be installed, administrators can quickly deploy the fixes, minimizing business
+risks. Further, the patch deployment process itself must be monitored to assure they are successfully
+installed. The date and time when patches were installed should also be recorded so they can later
+be correlated with any system performance issues that may have resulted. This allows administrators
+to rollback faulty patches before they become business impacting.
+
+\paragraph{Virtualization Infrastructure Performance}
+Virtualization continues to see increased adoption as a key enabler of cloud computing; however, the
+complexity of the resources necessary for enabling a virtualized environment has also radically increased
+management challenges. These difficulties can be broadly mitigated with the assistance of monitoring
+and analytics, which should be employed in support of all types of virtualization – including server
+virtualization, desktop virtualization, and application virtualization. Performance of each VM should
+be recorded in a similar way to how it would be recorded on a static server, and alerts should be
+activated if/when performance falls below established thresholds. However, VMs must also be mapped
+to physical infrastructures and to any software dependencies necessary for their operations. In this way,
+a failure or performance issue within a VM can be traced back to the physical component that is the
+root cause of the problem.
+
+\paragraph{Problem and Incident Alarming and Reporting}
+Despite all preventative measures, sometimes failures and performance errors will occur in any IT
+implementation. Incident management processes include the necessary procedures for detecting and
+responding to issues that have already occurred. The key to effective incident management is prompt
+identification of the failure – the faster it is identified, the faster it will
+be resolved. The entire support stack (including hardware, software, and virtual components) must be continuously 
+monitored so administrators can be immediately alerted to failure events. Some critical areas to monitor include: 
+system logs, application and script status reports, threshold breach alerts, process tables 
+(e.g. to identify hung or zombie processes) and database error logs.
+To ensure administrators are not overwhelmed with requests, they should only be alerted to incidents that are business
+impacting.
+
+\begin{quotation}
+    \noindent
+The key to effective incident management is prompt identification of the failure – the faster it is identified, 
+the faster it will be resolved.
+\end{quotation}
+
+
+\paragraph{Change Detection and Behavioral analysis}
+Both proactive problem management and reactive incident resolution are improved with addition of
+change detection. Nearly all IT failure events are caused by a change that was made to the environment
+(the only exception to that rule being hardware failures caused by normal wear-and-tear), so by
+identifying changes as they occur, failure events can be correlated to it and the root cause more rapidly
+identified. All configuration elements should be monitored for change – including OS kernel and
+system files, registry files, scripts, and applications – and records on each change event should include
+what was changed, when it was changed, and who implemented the change. The latter adds an element
+of accountability, allowing administrators to track back to who was responsible and determine why the
+change was made. Of course, IT operations teams do not have the time to evaluate every change event,
+so analytics should be in place to only alert them to changes that are impactful to the support stack.
+
+
+\paragraph{Capacity Planning}
+In order to ensure the continuous availability of IT services to support business requirements, IT
+operations must proactively predict and promptly implement expansions to the capacity of IT resources.
+For instance, when servers regularly exceed about 80\% of their capacity – in terms of CPU utilization,
+memory performance, and storage availability – they should be upgraded or replaced. Storage capacity
+should be identified by the amount of unallocated space, the amount of unused space in each partition,
+and the overall I/O performance of the storage device or array. Similarly, organizations that support
+virtualization implementations must monitor their capacity to support the existing number of VMs
+and the expected number of new VMs that will be provisioned. Database capacities must also be
+monitored by IT operations to ensure the system resources will be continuously available to support
+them. This includes monitoring database and log file sizes, buffer mangers, caches, and the number of
+active database user connections or open sessions.
+
+\paragraph{Email Server Monitoring}
+Email is an essential method of communication for any modern enterprise, which is why ensuring the
+uninterrupted routing of email messages is also a top priority for IT operations. Email servers, such as
+Microsoft Exchange, must be monitored to ensure they are continuously online and functioning at peak
+performance. This includes monitoring to ensure all applicable protocols for outgoing mail (such as
+SMTP) and incoming mail (such as POP3 and IMAP) are properly functioning, and the performance
+of mail routing can be determined by tacking the round trip time of messages. Any mail routing failures
+or performance issues should be logged and correlated to determine if the cause is a common system
+error. Additionally, the messages themselves should be monitored to ensure they conform to enterprise
+policies. Any emails with inappropriate content should be blacklisted and any messages sent from a
+questionable source (identified by their IP address and domain names) should be blocked.
+
+\subsection{Top 5 priorities for network security}
+\paragraph{Identity and Access Management (IAM)}
+Provide structure and reporting for authentication services
+for personnel and systems throughout the enterprise.
+\paragraph{Vulnerability Management} Identify and address vulnerabilities across all enterprise systems
+and applications.
+\paragraph{Change Monitoring} Identify changes, both authorized and unauthorized, to your infrastruc-
+ture and who performed them.
+\paragraph{Correlated, Centralized Event Management and Analysis} Maintain continuous monitoring
+for anomalous, unusual, noncompliant, and malicious activities with a centralized repository for
+collecting and displaying all recorded events with out-of-the-box and user customizable intel-
+ligence and reporting.
+\paragraph{Incident Response} Regularly updated and tested conglomeration of documented manual and
+automated response processes and procedures available to the security personnel.
+
+
+\subsection{Seven Priorities for Network Management}
+\paragraph{Get the Network Under Management} In order to establish
+effective network monitoring, the first step is to figure out which devices comprise the network and what
+critical resources are connected to it and by it. You can’t manage what you don’t know is out there, and
+EMA has heard countless stories of surprises resulting from initial (or even ongoing) network discovery.
+Start by selecting a network monitoring product. Some are simple, and some are sophisticated, but they
+all allow the collection of network device information for bringing devices under management.
+\\
+There are a number of critical connected resources that
+should also be incorporated as part of the initial monitoring push:
 \begin{itemize}
-    \item Operating System Performance and Availability
-    \item Server Hardware Status
-    \item Data and Storage Availability
-    \item Directory Services
-    \item Patches and Updates
-    \item Virtualization Infrastructure Performance
-    \item Problem and Incident Alarming and Reporting
-    \item Change Detection and Behavioral analysis
-    \item Capacity Planning
-    \item Email Server Monitoring
+    \item Network-enabling resources, such as DNS (Domain Name Service) and AD (Active Directory)
+    servers, as well as IP address management systems such as DHCP (Dynamic Host Control
+    Protocol), should be defined or discovered and added. These services are critical to basic network
+    functionality, and when any of them stop functioning properly, network and application health
+    and performance suffers. For instance, if AD authentication is not occurring because the server is
+    down, users will not be able to access their Exchange email.
+    \item Network security elements such as firewalls and IDS/IPSs (Intrusion Detection/Prevention
+    Systems) will commonly sit in-line as part of the network path.
+    \item Critical connected application servers are important too. You want to know that those systems are
+    up, and at the very least that their Network Interface Cards (NICs) are functioning properly, so
+    they can access the network without problems.
+\end{itemize}
+\paragraph{Define Device Groupings}
+The next step is to organize the elements to be monitored. This essential step allows network monitoring teams to 
+designate the relative importance of each component, according to specific characteristics of the organization and
+the managed infrastructure. Basically, the goal of this step is to link the monitored network to the
+organization that it connects and supports. \\
+\\
+There are three types of grouping approaches that EMA finds to be most common and useful across
+settings both large and small, and using them helps to answer the what, where, and who of problem
+isolation and management. Following are some key types:
+\begin{itemize}
+    \item Device Type: Network managers most often start with views into the managed network that bring
+    together devices by category, such as routers, switches, and access points. This approach to grouping
+    facilitates inventory management, device administration, and general health assessments. This will
+    often be the place to figure out precisely what is the source of a problem under investigation.
+    \item Geographical: For any organization that has more than one operating location, a geographical or
+    site-based grouping of monitored devices is perhaps the most easily understandable way of looking
+    at the network. This answers the question of where problems have occurred. Graphical topology
+    map views fill this need and are often used as a primary display in the NOC (Network Operations
+    Center) as a visual guide to operations status. It is also very helpful for quickly isolating the scope
+    and impact of any problem.
+    \item Organizational: The most direct technique for relating network monitoring information to the
+    connected community is to group network elements in terms of which part of the business or
+    organization they serve. This addresses the question of who is impacted by any issue or problem.
+    There will be a lot of overlap here, when considering core devices, but this is key to recognizing and
+    accurately communicating with end-user and line of business communities, whether for regular
+    status reporting or during a troubleshooting and recovery scenario.
+\end{itemize}
+
+\paragraph{Prioritized Availability Monitoring}
+The next step and priority is to define which devices, groups, and/or sites are to be designated as most
+critical to the organization. Any time one of these switches or ports is down unexpectedly, it’s likely
+that access to important applications has been interrupted or, at best, impaired. These will be the
+network components that will be assigned the highest priority for sustained monitoring – when any of
+these elements or locations suffers an availability incident, they will receive priority attention from the
+operations staff.
+
+\paragraph{Add Device-level Performance Monitoring}
+With availability monitoring in hand, network managers can turn towards the next major set of
+challenges – recognizing and managing the performance of the network. The objective here is to move
+beyond being able to answer the question “is the network up?” and onto “is the network meeting
+performance and throughput expectations?” The most common mechanism for this is to expand
+availability-oriented SNMP polling to collect a broad range of health and activity metrics from network
+devices on a repeating periodic basis. That data is then archived and kept in a historical database, so that
+trends can be identified and normal versus abnormal activity revealed.
+Following are a set of essential areas to focus upon for establishing device-level network performance monitoring:
+\begin{itemize}
+    \item Monitoring device resources: Collecting metrics on current levels of device resources such as
+    CPU usage, memory usage, power levels, temperature (and more) reveals a detailed view of the
+    operational capacity and health of each device.
+    \item Monitoring ports/interfaces: By harvesting counters such as packets, octets, discards and errors
+    both coming into and going out of each logical and physical interface, it is possible to recognize
+    congestion issues as well as operational viability of the many touch points that comprise the
+    connectivity fabric.
+    \item Setting performance thresholds: Default performance alerts/alarms should be configured to watch
+    for extreme high values in monitored metrics across all devices, such as interface utilization or
+    device CPU exceeding 90\%, and tuned more finely for critical/essential devices and resources.
+    This provides indications to network managers that network links may be approaching saturation,
+    before the network begins to fail.
+    \item Identifying trends: Your monitoring system should provide reports on performance metrics over
+    time so that you can recognize trends over weeks, months, or even the past year. This provides
+    network engineering the data necessary to accurately plan capacity, and network managers the
+    ability to recognize changes in usage patterns or quality indicators that warrant proactive mitigation.
+\end{itemize}
+
+\paragraph{Get Change Under Control}
+Enemy number one, when it comes to stability and performance of the
+network, is unplanned change or unintended consequences of change.
+Consequently, an essential aspect of monitoring networks for both
+performance and health must include recognition of changes being made
+to the network or occurring within the network. For instance, a routing
+change can break a network path between sites, a network QoS tag could
+be misconfigured and starve a latency-sensitive application like VoIP of
+necessary priority delivery, or a firewall rule change could block access to
+a critical application. Having change indicators on hand can significantly
+accelerate both problem troubleshooting as well as remediation. \\
+\\
+There are two techniques for integrating change awareness into network monitoring. The first involves
+finding and capturing change indicators, and adding them into the primary monitoring platform and
+process. These indicators can often be found in the form of device traps or notifications (sometimes via
+API). Another good source is log files, where the exact change made, the time it was made, and often
+who made the change is captured and recorded. \\
+The second important approach for establishing control over change is to leverage the ability of NCCM
+(Network Change and Configuration Management) tools to automatically scan devices, compare their
+configurations to expected norms, and automatically report variances. This latter approach can help
+reveal potential problem sources while also providing the added value of assuring policy and regulatory
+compliance. NCCM tools may be available as a module that works directly with your network monitoring
+platform, which will be easiest to integrate into monitoring practices, or may be stand-alone in nature, in
+which case a bit more effort will be needed to incorporate change indicators and scan results.
+\paragraph{Add Application Awareness}
+With the network layer well in hand, being monitored for availability, performance, and change,
+network managers can turn their focus upon adding the crown jewel of monitoring – application
+awareness. The objective here is to understand exactly what is traveling over the network, from where to
+where, in what volumes, and at what times. This is the touch point between a network and the served
+organization, yielding direct insight into the applications and services that the network is entrusted and
+expected to deliver. It also represents one of the most direct opportunities
+for recognizing how individuals as well as groups utilize and gain value
+from the network. \\
+With application-aware data incorporated into the monitoring process, measures can be taken to
+leverage it in a manner similar to device-based performance outlined above. Network managers will
+want to set thresholds so that they may be notified of unexpected spikes or high levels of activity of any
+individual application or any individual end-user. Unexpectedly low levels of activity may also be of
+interest, as it may be an indication of impaired application or transaction activity.
+\paragraph{Integrate and Communicate}
+The full value of network monitoring cannot be fully realized without sharing and collaborating,
+both across the IT infrastructure team as well as beyond. Since the network is the fabric connecting
+IT-empowered organizations, it represents a strategic viewpoint for understanding the ebb and flow of
+activity and health of the IT function in the eyes of those who rely upon IT for their daily tasks and work.
+That viewpoint is a powerful one that when effectively shared, and can facilitate improved planning,
+smoother rollouts, and a better collective understanding of operations between IT and their customers. \\
+Following are recommended focus areas for integration and sharing of information into and from the network 
+monitoring function:
+
+\begin{itemize}
+    \item \textbf{Help desk and trouble ticketing}: Connecting the network monitoring system to a trouble ticketing
+    platform, and/or directly into a help desk management system, provides a link for tracking issues
+    as they arise, the steps that have been taken to remedy them, in the final dispensation. Time-based
+    escalation procedures can also be automated for network issues using the features in these systems,
+    providing a better experience for IT’s customers.
+    \item \textbf{Systems and application monitoring}: The network connects systems to end users or to other systems,
+    to deliver application and service traffic. By aligning network monitoring with monitoring of systems
+    and applications, IT operations teams can correlate indicators and events to recognize dependencies
+    and accelerate identification of root causes. This may involve another layer of management technology,
+    to serve as a central consolidation point, or may be possible within the core network management
+    platform, if that system has been designed to incorporate data from other domains.
+    \item \textbf{Security monitoring and management}: Many of the technologies and data sources used for
+    network security monitoring are the same as those used for network operations monitoring. Issues
+    recognized within the network may, at times, actually reflect security threats. Open sharing of
+    activity and issues found by the network monitoring team with the security team can greatly
+    accelerate incident assessment and remediation. As with systems and applications, this may involve
+    forwarding of events or data to a central SEIM (Security Event and Information Management)
+    platform, or may be an integral capability of the network monitoring system.
+    \item \textbf{Line of business and end users}: Finally, we cannot forget those who the network serves. Providing
+    a means for reporting or exposing current network health, availability, and even performance
+    status to senior executive leadership and even down to end users can be very helpful in managing
+    expectations and proving value delivered. Essential here is the ability to focus reporting upon that
+    portion of the infrastructure that is relevant to a user, group of users, or line of business, so that
+    they are not overloaded with information that is not pertinent to their needs.
 \end{itemize}
 
 \subsection{80\% Rule}
@@ -803,6 +1099,37 @@ When servers regularly exceed about 80\% of their capacity – in terms of CPU u
 and storage availability – they should be upgraded or replaced. 
 
 \section{CoBIT Framework}
+COBIT (Control Objectives for Information and Related Technologies) is a good-practice framework created by 
+international professional association ISACA for information technology (IT) 
+management and IT governance. COBIT provides an implementable "set of controls over information technology and organizes
+them around a logical framework of IT-related processes and enablers."
+
+The business orientation of COBIT consists of linking business goals to IT goals, providing metrics and maturity models
+to measure their achievement, and identifying the associated responsibilities of business and IT process owners.
+The process focus of COBIT is illustrated by a process model that subdivides IT into four domains 
+(Plan and Organize; Acquire and Implement; Deliver and Support; and Monitor and Evaluate) and 34 processes inline with 
+the responsibility areas of plan, build, run, and monitor. It is positioned at a high level and has been aligned and 
+harmonized with other, more detailed IT standards and good practices such as COSO, ITIL, BiSL, ISO 27000, CMMI, TOGAF 
+and PMBOK. COBIT acts as an integrator of these different guidance materials, summarizing key objectives under one 
+umbrella framework that link the good practice models with governance and business requirements.
+COBIT 5 further consolidated and integrated the COBIT 4.1, Val IT 2.0 and Risk IT frameworks and drew from ISACA's IT 
+Assurance Framework (ITAF) and the Business Model for Information Security (BMIS).
+
+The framework and its components can, when utilized well, also contribute to ensuring regulatory compliance.
+It can encourage less wasteful information management, improve retention schedules, increase business agility, and 
+lower costs while better complying with data retention and management regulations. \\
+\\
+COBIT components include:\\
+\begin{itemize}
+    \item \textbf{Framework}: Organizes IT governance objectives and good practices by IT domains and processes and links them to business requirements.
+    \item \textbf{Process descriptions}: A reference process model and common language for everyone in an organization. The processes map to responsibility areas of plan, build, run, and monitor.
+    \item \textbf{Control objectives}: Provides a complete set of high-level requirements to be considered by management for effective control of each IT process.
+    \item \textbf{Management guidelines}: Helps assign responsibility, agree on objectives, measure performance, and illustrate interrelationship with other processes.
+    \item \textbf{Maturity models}: Assesses maturity and capability per process and helps to address gaps.
+\end{itemize}
+
+
+
 \begin{center}
     \includegraphics[width=4cm]{cobit-fw.jpg}\\
 \end{center}
@@ -872,6 +1199,10 @@ between governance and management is:
 \end{center}
 
 \subsection{Table of Maturity Levels}
+\begin{center}
+    \includegraphics[width=\columnwidth]{cobit-maturity-level-comparison.png}
+\end{center}
+
 
 \subsection{Cobit 5 vs Cobit 4.1}
 \begin{center}
