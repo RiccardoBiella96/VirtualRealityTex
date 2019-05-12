@@ -70,7 +70,6 @@
 \vspace{-1.2em}\\
 {\small\tableofcontents}
 
-\columnbreak
 \section{Executive Support} 
 Crucial for SysMan. Business metrics is a good argument for Ex. Supp., continuous support
 should be ensured. \\
@@ -322,33 +321,29 @@ company’s change management program.
 
 \subsubsection{Tasks that aren't part of CMP}
 \begin{itemize}
-\item Contingency/Disaster Recovery
-\item BCM related activities
-\item Changes to non-production elements or resources
-\item Changes made within the daily administrative process.
-\begin{itemize}
-\item Password resets
-\item User adds/deletes
-\item User modifications
-\item Adding, deleting or revising security groups
-\item Rebooting machines when there is no change to the
-\item configuration of the system
-\item File permission changes
-\end{itemize}
+    \item Contingency/Disaster Recovery
+    \item BCM related activities
+    \item Changes to non-production elements or resources
+    \item Changes made within the daily administrative process.
+        \begin{itemize}
+        \item Password resets
+        \item User adds/deletes
+        \item User modifications
+        \item Adding, deleting or revising security groups
+        \item Rebooting machines when there is no change to the
+        \item configuration of the system
+        \item File permission changes
+        \end{itemize}
 \end{itemize}
 
 \subsection{Workflow Tasks}
 \begin{center}
-    \begin{minipage}{\columnwidth}
-        \includegraphics[width=\columnwidth]{basic-change-management-workflow.png}
-    \end{minipage}
+    \includegraphics[width=\columnwidth]{basic-change-management-workflow.png}
 \end{center}
 
 \subsection{Approvals Required for Change Based on Risk Level}
 \begin{center}
-    \begin{minipage}{\columnwidth}
-        \includegraphics[width=\columnwidth]{approval-required-change-based-on-risk-level.png}
-    \end{minipage}
+    \includegraphics[width=\columnwidth]{approval-required-change-based-on-risk-level.png}
 \end{center}
 
 \subsection{Risk Level Based Lead Times}
@@ -382,6 +377,49 @@ approval at the company:
     \end{minipage}
 \end{center}
 
+\subsection{Key Definitions}
+    \paragraph{Change Advisory Board (CAB)} The CAB is a cross-functional group set up to evaluate change requests
+    for business need, priority, cost/benefit, and potential impacts to other systems or processes. Typically
+    the CAB will make recommendations for implementation, further analysis, deferment, or cancellation.
+    \paragraph{CAB Emergency Committee (CAB/EC)} This is a subset of the CAB that deals only with emergency
+    changes. It is established to be able to meet on short notice to authorize or reject changes with
+    emergency priority.
+    \paragraph{Change} Any new IT component deliberately introduced to the IT environment that may affect an IT
+    service level or otherwise affect the functioning of the environment or one of its components.
+    \paragraph{Change Category} The measurement of the potential impact a particular change may have on IT and the
+    business. The change complexity and resources required, including people, money, and time, are
+    measured to determine the category. The risk of the deployment, including potential service downtime, is
+    also a factor.
+    \paragraph{Change Coordinator} The role that is responsible for planning and implementing a change in the IT
+    environment. The Change Coordinator role is assigned to an individual for a particular change by the
+    Change Coordinator and assumes responsibilities upon receiving an approved RFC. The Change
+    Coordinator is required to follow the approved change schedule.
+    \paragraph{Change Requester} A person who initiates a Request for Change; this person can be a business
+    representative or a member of the IT organization.
+    \paragraph{Change Initiator} A person who receives a request for change from the Change Requester and enters
+    the request for change in the Change Management process; this person is typically a member of the IT
+    organization.
+    \paragraph{Change Manager} The role that has the overall management responsibility for the Change Management
+    process in the IT organization.
+    \paragraph{Change Priority} A change classification that determines the speed with which a requested change is to
+    be approved and deployed. The urgency of the need for the solution and the business risk of not
+    implementing the change are the main criteria used to determine the priority.
+    \paragraph{Change Record} The record within the company’s selected technology platform that contains all of the
+    information relative to a change. This information includes justification, risk and impact analysis,
+    approvals, phases, and tasks associated with accomplishing the change.
+    \paragraph{Configuration Item (CI)} An IT component that is under configuration management control. Each CI can
+    be composed of other CIs. CIs may vary widely in complexity, size, and type, from an entire system
+    (including all hardware, software, and documentation) to a single software module or a minor hardware
+    component.
+    \paragraph{Forward Schedule of Changes (FSC)} The FSC shows when all changes are to take place within the
+    entire Customer IT infrastructure. This single glance at the change schedule makes it possible to see the
+    available change windows. Scheduling changes against the FSC also ensures that multiple,
+    interdependent changes are not scheduled at the same time.
+    \paragraph{Release} A collection of one or more changes that includes new and / or changed Configuration Items
+    that are tested and then introduced into the production environment.
+    \paragraph{Request for Change (RFC)} This is the formal change request, including a description of the change,
+    components affected, business need, cost estimates, risk assessment, resource requirements, and
+    approval status.
 
 
 \section{Problem Management}
@@ -491,6 +529,8 @@ And we can streamline the configuration management process by automating certain
 pieces of documentation requiring the same update, for example.
 
 \section{Cloud Services}
+\includegraphics[width=\columnwidth]{cloud-services-1.png}
+
 \subsection{Characteristics of a Cloud}
 \begin{itemize}
 \item Resource pooling is the most fundamental characteristic, as discussed above. The
@@ -530,6 +570,25 @@ manage the underlying servers, networks, or other infrastructure.
 fundamental computing infrastructure, such as compute, network, or
 storage.
 \end{itemize}
+
+\subsection{Cloud Services Security}
+\includegraphics[width=\columnwidth]{cloud-service-security.png}
+
+\subsection{Reference Architecture}
+\begin{center}
+    \includegraphics[width=0.6\columnwidth]{cloud-services-reference-arch.png}
+\end{center}
+
+\subsection{Simplified IaaS platform}
+\begin{center}
+    \includegraphics[width=\columnwidth]{cloud-simplified-iaas.png}
+\end{center}
+
+\subsection{Simplified SaaS on top of our IaaS}
+\begin{center}
+    \includegraphics[width=\columnwidth]{cloud-simplified-saas.png}
+\end{center}
+
 
 \section{Capacity Planning}
 As its name implies, the systems management discipline of capacity planning involves the planning of various kinds
@@ -792,6 +851,35 @@ between governance and management is:
     \end{minipage}
 \end{center}
 
+\subsection{Key Roles, Activities and Relationships}
+\begin{center}
+    \includegraphics[width=\columnwidth]{cobit-key-roles.png}
+\end{center}
+
+\subsection{Enterprise Enablers}
+\begin{center}
+    \includegraphics[width=\columnwidth]{cobit-enterprise-enablers.png}
+\end{center}
+
+\subsection{Enterprise Enablers (2)}
+\begin{center}
+    \includegraphics[width=\columnwidth]{cobit-enterprise-enablers-2.png}
+\end{center}
+
+\subsection{Management and Governance key areas and responsibilities}
+\begin{center}
+    \includegraphics[width=\columnwidth]{cobit-management-governance-key-areas.png}
+\end{center}
+
+\subsection{Table of Maturity Levels}
+
+\subsection{Cobit 5 vs Cobit 4.1}
+\begin{center}
+    \begin{minipage}{\columnwidth}
+        \includegraphics[width=\columnwidth]{cobit5-vs-cobit41.png}
+    \end{minipage}
+\end{center}
+
 \subsection{ISACA}
 Leading global provider of knowledge, certifications, community, advocacy, education on information systems (IS), 
 assurance and security, enterprise governance and management of IT, IT-related risk and compliance.\\
@@ -874,13 +962,6 @@ are monitored, assessed, and defended.
     \end{minipage}
 \end{center}
 
-\subsection{Cobit 5 vs Cobit 4.1}
-\begin{center}
-    \begin{minipage}{\columnwidth}
-        \includegraphics[width=\columnwidth]{cobit5-vs-cobit41.png}
-    \end{minipage}
-\end{center}
-
 \subsection{Typical Services handled by SOC}
 
 \begin{itemize}
@@ -930,5 +1011,42 @@ The SOC general skill-set are:
     \end{minipage}
 \end{center}
 
+
+\section{SysAdmin Code Of Ethics}
+We as professional System Administrators do hereby commit ourselves to the highest standards of
+ethical and professional conduct, and agree to be guided by this code of ethics, and encourage every
+System Administrator to do the same.
+
+\paragraph{Professionalism} I will maintain professional conduct in the workplace and will not allow personal
+feelings or beliefs to cause me to treat people unfairly or unprofessionally.
+\paragraph{Personal Integrity} I will be honest in my professional dealings and forthcoming about my competence
+and the impact of my mistakes. I will seek assistance from others when required.
+I will avoid conflicts of interest and biases whenever possible. When my advice is sought, if I have a
+conflict of interest or bias, I will declare it if appropriate, and recuse myself if necessary.
+\paragraph{Privacy} I will access private information on computer systems only when it is necessary in the course of
+my technical duties. I will maintain and protect the confidentiality of any information to which I may
+have access, regardless of the method by which I came into knowledge of it.
+\paragraph{Laws and Policies} I will educate myself and others on relevant laws, regulations,
+and policies regarding the performance of my duties.
+
+\paragraph{Communication} I will communicate with management, users, and colleagues about computer matters
+of mutual interest. I will strive to listen to and understand the needs of all parties.
+\paragraph{System Integrity} I will strive to ensure the necessary integrity, reliability, and availability of the systems
+for which I am responsible.
+I will design and maintain each system in a manner to support the purpose of the system to the
+organization.
+\paragraph{Education} I will continue to update and enhance my technical knowledge and other work-related skills.
+I will share my knowledge and experience with others.
+\paragraph{Responsibility to Computing Community} I will cooperate with the larger computing community to
+maintain the integrity of network and computing resources.
+Social Responsibility As an informed professional, I will encourage the writing and adoption of relevant
+policies and laws consistent with these ethical principles.
+\paragraph{Ethical Responsibility} I will strive to build and maintain a safe, healthy, and productive workplace.
+I will do my best to make decisions consistent with the safety, privacy, and well-being of my community
+and the public, and to disclose promptly factors that might pose unexamined risks or dangers.
+I will accept and offer honest criticism of technical work as appropriate and will credit properly the
+contributions of others.
+I will lead by example, maintaining a high ethical standard and degree of professionalism in the
+performance of all my duties. I will support colleagues and co-workers in following this code of ethics.
 \end{multicols}
 \end{document}
