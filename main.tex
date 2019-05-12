@@ -1,4 +1,4 @@
-\documentclass[8pt,a4]{extarticle}
+\documentclass[a4]{article}
 \usepackage{multicol,caption}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
@@ -18,12 +18,30 @@
 \usepackage[titles]{tocloft}
 \usepackage[sfdefault]{roboto}
 \usepackage{enumitem}
-\usepackage[titles]{tocloft}
+\usepackage[compact]{titlesec}
 
-\setenumerate{itemsep=0.2pt,topsep=3pt}
-\setitemize{itemsep=0.2pt, topsep=3pt}
+\setenumerate{itemsep=0pt,topsep=0pt}
+\setitemize{itemsep=0pt, topsep=0pt}
 
+\setlength{\parskip}{0cm}
+\setlength{\parindent}{0em}
+%\setlength{\headsep}{0pt}
+\setlength{\topskip}{0pt}
+%\setlength{\topmargin}{0pt}
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
+
+%% TOC
 \graphicspath{{figures/}}
+
+\makeatletter
+\newenvironment{Table}
+   {\par\bigskip\noindent\minipage{\columnwidth}\centering}
+   {\endminipage\par\bigskip}
+\makeatother
+
+\setlist{nolistsep}
+
 
 \newenvironment{Figure}
   {\par\medskip\noindent\minipage{\linewidth}}
@@ -40,6 +58,8 @@
 % TOC
 \setlength{\cftbeforesecskip}{-.2ex}
 
+
+
 \begin{document}
 
 \begin{multicols}{3}
@@ -48,7 +68,8 @@
 \normalsize \\
 \today, \currenttime
 \vspace{-1.2em}\\
-\tableofcontents
+{\small\tableofcontents}
+
 \columnbreak
 \section{Executive Support} 
 Crucial for SysMan. Business metrics is a good argument for Ex. Supp., continuous support
@@ -99,9 +120,9 @@ Integrating the 4 key elements of Good Customer Service.
 \section{Availability}
 \paragraph{Availability} Process of optimizing the readiness of production systems by accurately
  measuring, analyzing, and reducing outages to those production systems. \\
-{\tiny The ratio of the {\color{MidnightBlue}{total time a functional unit is capable of being
- used during a given interval}} to {\color{MidnightBlue}{the length of the interval}}. \\
-Mean Time To Failure (MTTF), Mean Time To Repair (MTTR)}
+The ratio of the {\color{MidnightBlue}{total time a functional unit is capable of being
+used during a given interval}} to {\color{MidnightBlue}{the length of the interval}}. \\
+Mean Time To Failure (MTTF), Mean Time To Repair (MTTR)
 \paragraph{Responsiveness} Operational responsiveness is a quality of a business process or supporting IT solution, 
 which indicates its ability to respond to changing conditions and customer interactions as they occur.  
 \paragraph{Uptime} measure of the time that individual components within a production system are functionally operating.
@@ -255,6 +276,12 @@ communicating, and implementing changes. \\
 A change is defined as any modification that could impact the stability or responsiveness of an
 IT production environment.
 
+\begin{center}
+    \begin{minipage}{\columnwidth}
+        \includegraphics[width=\columnwidth]{change-coordinator.png}
+    \end{minipage}
+\end{center}
+
 \subsection{Key Steps Required in Developing a Change Management Process}
 \begin{enumerate}
 \item Identify an executive sponsor.
@@ -272,7 +299,13 @@ IT production environment.
 \item Use the CAB to continually refine and improve the change management process.
 \end{enumerate}
 
-\subsection{Tasks in the scope of CMP}
+\subsection{Scope}
+Because the Change Management Process deals with the management of changes in the production
+environment, it is imperative that both customers and the company’s change organization understand the
+events that are considered within the scope of the process. In this section, the scope is described and
+includes areas which are both within and outside of the change management process scope.
+
+\subsubsection{Tasks in the scope of CMP}
 \begin{itemize}
 \item SDLC – Changes handled through the formal software development life cycle will be included within the 
 company’s change management program.
@@ -287,7 +320,7 @@ company’s change management program.
 \item Generic and Miscellaneous Changes – Any changes that are required to complete tasks associated with normal job requirements.
 \end{itemize}
 
-\subsection{Tasks that aren't part of CMP}
+\subsubsection{Tasks that aren't part of CMP}
 \begin{itemize}
 \item Contingency/Disaster Recovery
 \item BCM related activities
@@ -303,6 +336,53 @@ company’s change management program.
 \item File permission changes
 \end{itemize}
 \end{itemize}
+
+\subsection{Workflow Tasks}
+\begin{center}
+    \begin{minipage}{\columnwidth}
+        \includegraphics[width=\columnwidth]{basic-change-management-workflow.png}
+    \end{minipage}
+\end{center}
+
+\subsection{Approvals Required for Change Based on Risk Level}
+\begin{center}
+    \begin{minipage}{\columnwidth}
+        \includegraphics[width=\columnwidth]{approval-required-change-based-on-risk-level.png}
+    \end{minipage}
+\end{center}
+
+\subsection{Risk Level Based Lead Times}
+It is essential that requests for change are submitted and approved in a timely manner. This will allow
+completion of accurate documentation, change processing and obtaining the approvals in sufficient time
+prior to the requested implementation date.
+Lead times are the number of days an action (Initiation or Approval) must be completed prior to the
+requested implementation date. The number of days will vary, depending on the priority and the risk
+level.
+\begin{center}
+    \begin{minipage}{\columnwidth}
+        \includegraphics[width=\columnwidth]{risk-based-lead-times.png}
+    \end{minipage}
+\end{center}
+
+\subsection{Change Approval Phase}
+After a minor, major or significant change has been correctly prioritized, categorized, and analyzed by the
+Change Coordinator and been through the Peer Review process, the change must be authorized for
+implementation. The diagram below identifies the workflow associated with change management
+approval at the company:
+\begin{center}
+    \begin{minipage}{\columnwidth}
+        \includegraphics[width=\columnwidth]{change-approval-phase.png}
+    \end{minipage}
+\end{center}
+
+\subsection{Implementation and Documentation phase}
+\begin{center}
+    \begin{minipage}{\columnwidth}
+        \includegraphics[width=\columnwidth]{change-implementation-documentation-phase.png}
+    \end{minipage}
+\end{center}
+
+
 
 \section{Problem Management}
 Problem management is a process used to identify, log, track, resolve, and analyze problems impacting IT services.
@@ -339,10 +419,9 @@ The first performance consideration is the size and type of main memory.
 \subsection{Storage Management Reliability}
 Fault tolerance w/ RAID Systems
 
-\resizebox{0.8\columnwidth}{!}{
-    \begin{minipage}[t][][b]{\columnwidth}
-        \centering
-\begin{tabular}{|l|l|}
+\begin{Table}
+    \resizebox{\columnwidth}{!}{
+    \begin{tabular}{|l|l|}
     \hline
     \textbf{RAID Level} & \textbf{Explanation} \\\hline
     0 & Disk striping for performance \\\hline
@@ -350,9 +429,9 @@ Fault tolerance w/ RAID Systems
     0 + 1 & Combination of striping and mirroring \\\hline
     3 & Striping and fault tolerance with parity on totally dedicated parity drives \\\hline
     5 & Striping and fault tolerance with parity on nonassociated data drives \\\hline 
-\end{tabular}
-\end{minipage}
-}
+    \end{tabular}
+    }
+\end{Table}
 
 \subsection{Storage Management Recoverability}
 several methods available for recovering data that has been altered, deleted, damaged, or otherwise made inaccessible.
@@ -644,11 +723,8 @@ for air conditioning, smoke detection, and fire suppression.
 
 \section{IT Monitoring}
 \begin{center}
-\begin{minipage}[t][4cm][b]{4cm}
-    \includegraphics[height=4cm]{dell-lc-management.jpg}
-\end{minipage}
+    \includegraphics[width=4cm]{dell-lc-management.jpg}
 \end{center}
-
 Monitoring Priorities for Systems Management
 \begin{itemize}
     \item Operating System Performance and Availability
@@ -669,9 +745,7 @@ and storage availability – they should be upgraded or replaced.
 
 \section{CoBIT Framework}
 \begin{center}
-    \begin{minipage}[t][4cm][b]{4cm}
-        \includegraphics[height=4cm]{cobit-fw.jpg}
-    \end{minipage}
+    \includegraphics[width=4cm]{cobit-fw.jpg}\\
 \end{center}
 \noindent
 The COBIT 5 framework defines
@@ -704,6 +778,20 @@ between governance and management is:
     enterprise objectives (e.g. CEO).
 \end{itemize}
 
+\subsection{Governance Objective: the value creation}
+\begin{center}
+    \begin{minipage}{0.5\columnwidth}
+        \includegraphics[width=\columnwidth]{governance-objective-value-creation.png}
+    \end{minipage}
+\end{center}
+
+\subsection{Governance and Management in COBIT5}
+\begin{center}
+    \begin{minipage}{0.5\columnwidth}
+        \includegraphics[width=\columnwidth]{governance-management-cobit5.png}
+    \end{minipage}
+\end{center}
+
 \subsection{ISACA}
 Leading global provider of knowledge, certifications, community, advocacy, education on information systems (IS), 
 assurance and security, enterprise governance and management of IT, IT-related risk and compliance.\\
@@ -734,7 +822,7 @@ organization’s technology infrastructure:
     \item network and
     \item security devices such as firewalls and antivirus filters.
 \end{itemize}
-
+\noindent
 SIEM software identifies and categorizes incidents and events, as well as analyzes them. \\
 SIEM has 2 main objectives:
 \begin{itemize}
@@ -745,9 +833,102 @@ SIEM has 2 main objectives:
     runs against predetermined rulesets, indicating a potential
     security issue.
 \end{itemize}
-
+\noindent
 SIEM is implemented via software, systems, appliances, or some combination of these items. 
 There are, generally speaking, six main attributes of an SIEM system:
+
+\begin{itemize}
+    \item \textbf{Retention}: Storing data for long periods so that decisions can be made off of more
+    complete data sets.
+    \item \textbf{Dashboards}: Used to analyze (and visualize) data in an attempt to recognize patterns
+    or target activity or data that does not fit into a normal pattern.
+    \item \textbf{Correlation}: Sorts data into packets that are meaningful, similar and share common
+    traits. The goal is to \underline{turn data into useful information}.
+    \item \textbf{Alerting}: When data is gathered or identified that trigger certain responses - such as
+    alerts or potential security problems - SIEM tools can activate certain protocols to alert
+    users, like notifications sent to the dashboard, an automated email or text message.
+    \item \textbf{Data Aggregation}: Data can be gathered from any number of sites once SIEM is
+    introduced, including servers, networks, databases, software and email systems. The
+    aggregator also serves as a consolidating resource before data is sent to be
+    correlated or retained.
+    \item \textbf{Compliance}: Protocols in a SIEM can be established that automatically collect data
+    necessary for compliance with company, organizational or government policies.
+\end{itemize}
+
+\subsection{6 Ways to screw up a SIEM implementation}
+\begin{center}
+    \begin{minipage}{\columnwidth}
+        \includegraphics[width=\columnwidth]{screw-up-SIEM.png}
+    \end{minipage}
+\end{center}
+
+\section{SOC}
+An information security operations center ("ISOC" or "SOC") is a facility where enterprise information systems 
+(web sites, applications, databases, data centers and servers, networks, desktops and other endpoints) 
+are monitored, assessed, and defended. 
+
+\subsection{High Level View}
+\begin{center}
+    \begin{minipage}{\columnwidth}
+        \includegraphics[width=\columnwidth]{soc-high-level.png}
+    \end{minipage}
+\end{center}
+
+\subsection{Cobit 5 vs Cobit 4.1}
+\begin{center}
+    \begin{minipage}{\columnwidth}
+        \includegraphics[width=\columnwidth]{cobit5-vs-cobit41.png}
+    \end{minipage}
+\end{center}
+
+\subsection{Typical Services handled by SOC}
+
+\begin{itemize}
+    \item Security Monitoring \& Incident Handling
+    \begin{itemize}
+        \item Security Incident Handling
+        \item New Threats Management
+    \end{itemize}
+    \item Operational Security Management
+    \begin{itemize}
+        \item Risk Analysisy Management (Security Plans)
+        \item Remediation Plans
+        \item Operational Security
+    \end{itemize}
+    \item Technical Security Analysis
+    \begin{itemize}
+        \item Vulnerability Assessment
+        \item Security Baseline Compliance Assessment
+        \item Forensics Analysis Services
+    \end{itemize}
+    \item Security Infrastructures Management
+    \begin{itemize}
+        \item Operational Security
+    \end{itemize}
+\end{itemize}
+\noindent
+SOC’s modular design enables adding/removing different services depending on organization requirements and
+InfoSec maturity.
+
+\subsection{SOC's Team Skills - General}
+Synthetically, the SOC team manages and prevents security issues and defines all security instructions/guidelines
+for IT teams and therefore requires a diverse and very high level of expertise grouped into 4 distinct areas 
+of expertise.
+\noindent
+The SOC general skill-set are:
+\begin{itemize}
+    \item Security Skills
+    \item Network Skills
+    \item Infrastructure Skills
+    \item Governance \& Compliance Skills
+\end{itemize}
+
+\subsection{SOC Options}
+\begin{center}
+    \begin{minipage}{\columnwidth}
+        \includegraphics[width=\columnwidth]{soc-options.png}
+    \end{minipage}
+\end{center}
 
 \end{multicols}
 \end{document}
