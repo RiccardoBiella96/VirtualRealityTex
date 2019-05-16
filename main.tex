@@ -19,6 +19,7 @@
 \usepackage[sfdefault]{roboto}
 \usepackage{enumitem}
 \usepackage[compact]{titlesec}
+\usepackage{textcomp}
 
 
 \setenumerate{itemsep=0pt,topsep=0pt}
@@ -205,7 +206,42 @@ Microsoft ha cessato la produzione di Kinect nel 2017.
 
 \subsection{MYO}
 Sfruttare l'attività muscolare per fornire l'input del computer presenta molti vantaggi rispetto ai dispositivi simili a Kinect che utilizzano telecamere o sensori inerziali. Un nuovo dispositivo di input wireless basato sui gesti che funziona rilevando la firma elettrica delle contrazioni degli avambracci è ora disponibile per il pre-ordine da una nuova società a \$150. La fascia da braccio, soprannominata MYO, viene fornita con un'API per sviluppatori che consente di utilizzare completamente questa sofisticata apparecchiatura.
+\subsection{Marcatori passivi}
+Sistemi ottici passivi che usano marcatori ricoperti da materiale retroreflettivo che riflette la luce generata da camere posizionate nell'ambiente.
+Aggiustando il threshold della camera è possibile riconoscere solo parti abbaglianti ignorando il resto della scena.
+Più camere vedono lo stesso marcatore e più è possibile definire in maniera precisa la sua posizione nello spazio 3D (due camere minimo).
+Tale sistema implica tipicamente l'uso dalle 2 fino alle 48 camere per cui è parecchio costoso.
+\subsection{Radio Frequency (RF)}
+\paragraph{Descrizione}
+I sistemi RF sono sistemi che rilevano la posizione dell'utilizzatore grazie a delle 
+frequenze radio emesse, come i vecchi radar. Con la miglioria di questi devices la 
+precisione del rilevamento arriva una precisione di $\sim$10mm.
+\paragraph{Vantaggi}
+\begin{itemize}
+    \item Precisione alta sulla posizione anche a distanza elevata.
+    \item Precisione mantenuta su oggetti/soggetti di grossa taglia.
+\end{itemize}
+\paragraph{Svantaggi}
+\begin{itemize}
+    \item Facilmente occludibili con un ostacolo tra il rilevatore e l'entità da
+    rilevare.
+    \item Sconsigliati per motion capture ottimale perchè la precisione è troppo scarsa.
+\end{itemize}
+\paragraph{Costo} $\sim$300.- CHF (135 Emittore, 175 Ricettore) 
 
+\subsection{Ascension Flock of Birds}
+Tecnologia magnetica DC(Direct Current) pulsata per un monitoraggio dei movimenti corporei. È immune da metalli conduttivi non magnetici, è
+possibile utilizzare questo tracker intorno all'acciaio inossidabile, al titanio e all'alluminio senza errori di misurazione.
+\paragraph{Vantaggi}
+\begin{itemize}
+    \item Libertà dagli errori di blocco e occlusione.
+    \item Non è necessario mantenere una linea visiva libera tra i sensori e il trasmettitore.
+    \item Tracciamento simultaneo di tutti i sensori senza degrado nelle velocità di misurazione.
+    \item Traccia la testa e le mani contemporaneamente senza ritardi.
+    \item La copertura a lungo raggio è disponibile acquistando il trasmettitore a portata estesa (ERT / ERC).
+\end{itemize}
+\paragraph{Costo}
+Prezzo: 1500 franchi circa
 \section{Head mounted display - Augmented Reality}
 \subsection{Microsoft Hololens}
 Il visore si connette al proprio dispositivo mobile o ad un computer con sistema operativo Windows 10 per poter sincronizzare e avviare il dispositivo HoloLens.
@@ -236,10 +272,57 @@ Prezzo: 399 \$
 \section{Haptics}
 Dispositivo VR che da un feedback tattile che può anche essere una forza opposta che non ti fa chiudere la mano quando nel mondo virtuale prendi un oggetto.
 Un esempio di haptics che pero non ha la forza resistente è VR Glove chiamati Plexus che ha un feedback tattile. Prezzo 250\$.
+\subsection{Reactive Grip Motion Controller}
+Sono dei controller che hanno nel manico dei piatti magnetici che simulano le forze di frizione che si avrebbero quando terresti l'oggetto che nel mondo virtuale stai tenendo.
+\begin{center}
+    \begin{minipage}{\columnwidth}
+        \includegraphics[width=\columnwidth]{reactiveGrip.png}
+    \end{minipage}
+\end{center}
+\paragraph{Prezzo: 78\$}
+\subsection{Haptic Mask(bHaptics)}
+E' una fascetta che si mette in testa per sentire fisicamente un tocco in testa quando si riceve un colpo nel medesimo.
+\subsection{Haptic Sleeve(bHaptics)}
+Uguale a Haptic Mask, ma sento il feedback sul braccio.
+\subsection{Haptic Vest(bHaptics)}
+Uguale a Haptic Mask, ma sul busto.
+\paragraph{Il prezzo dell'intera suit è 549 \$} 
 \section{Altre tecnologie}
 \subsection{Artoolkit}
 ARToolKit is an open-source computer tracking library for creation of strong augmented reality applications that overlay virtual imagery on the real world.
 Prezzo: 100\$
+\subsection{Skybox}
+\paragraph{Descrizione} 
+Una Skybox è una tipologia speciale di texture che viene applicata all'iterno di un 
+cubo, nel quale sarà contenuta la scena. Si utilizza per dare una texture ad elementi
+esterni o irraggiungibili dall'utente. 
+\paragraph{Vantaggi}
+\begin{itemize}
+    \item Facile da implementare.
+    \item Facile codificare le coordinate delle texture anche a mano.
+    \item Facile e veloce da disegnare.
+\end{itemize}
+\paragraph{Svantaggi}
+\begin{itemize}
+    \item Si possono avere problemi con la prospettiva e soprattuto con gli angoli.
+    \item Può essere difficile disegnare una Skybox del quale non si noti il cubo.
+\end{itemize}
+\paragraph{Costo} Potenzialmente gratuita.
+\subsection{Skydome}
+\paragraph{Descrizione} 
+Una Skydome è come una Skybox ma invece che essere applicata su un cubo viene applicata
+su una semisfera.
+\paragraph{Vantaggi}
+\begin{itemize}
+    \item È relativamente semplice disegnarla.
+    \item Flessibile perchè alto numero di vertici.
+    \item Meno problemi di prospettiva 
+\end{itemize}
+\paragraph{Svantaggi}
+\begin{itemize}
+    \item Numero di vertici alto quindi più lenta.
+\end{itemize}
+\paragraph{Costo} Potenzialmente gratuita.
 
 % // QUESTO E' QUELLO CHE VA INSERITO:
 
@@ -248,8 +331,6 @@ Prezzo: 100\$
 % SteamVR
 
 % DI QUESTI SOTTO POSSIAMO INSERIRE: qualche utilizzo reale
-% Skybox
-% Skydome
 % Object picking
 
 % VERIFICARE E AGGIUNGERE IL MINIMO FPS:
