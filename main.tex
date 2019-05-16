@@ -19,6 +19,7 @@
 \usepackage[sfdefault]{roboto}
 \usepackage{enumitem}
 \usepackage[compact]{titlesec}
+\usepackage{textcomp}
 
 
 \setenumerate{itemsep=0pt,topsep=0pt}
@@ -120,6 +121,24 @@ Sistemi ottici passivi che usano marcatori ricoperti da materiale retroreflettiv
 Aggiustando il threshold della camera è possibile riconoscere solo parti abbaglianti ignorando il resto della scena.
 Più camere vedono lo stesso marcatore e più è possibile definire in maniera precisa la sua posizione nello spazio 3D (due camere minimo).
 Tale sistema implica tipicamente l'uso dalle 2 fino alle 48 camere per cui è parecchio costoso.
+\subsection{Radio Frequency (RF)}
+\paragraph{Descrizione}
+I sistemi RF sono sistemi che rilevano la posizione dell'utilizzatore grazie a delle 
+frequenze radio emesse, come i vecchi radar. Con la miglioria di questi devices la 
+precisione del rilevamento arriva una precisione di $\sim$10mm.
+\paragraph{Vantaggi}
+\begin{itemize}
+    \item Precisione alta sulla posizione anche a distanza elevata.
+    \item Precisione mantenuta su oggetti/soggetti di grossa taglia.
+\end{itemize}
+\paragraph{Svantaggi}
+\begin{itemize}
+    \item Facilmente occludibili con un ostacolo tra il rilevatore e l'entità da
+    rilevare.
+    \item Sconsigliati per motion capture ottimale perchè la precisione è troppo scarsa.
+\end{itemize}
+\paragraph{Costo} $\sim$300.- CHF (135 Emittore, 175 Ricettore) 
+
 \section{Head mounted display - Augmented Reality}
 \subsection{Microsoft Hololens}
 Il visore si connette al proprio dispositivo mobile o ad un computer con sistema operativo Windows 10 per poter sincronizzare e avviare il dispositivo HoloLens.
