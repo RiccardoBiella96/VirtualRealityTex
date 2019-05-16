@@ -17,6 +17,7 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage[titles]{tocloft}
 \usepackage[sfdefault]{roboto}
+\usepackage{lmodern}
 \usepackage{enumitem}
 \usepackage[compact]{titlesec}
 \usepackage{textcomp}
@@ -60,8 +61,6 @@
 % TOC
 \setlength{\cftbeforesecskip}{-.2ex}
 
-
-
 \begin{document}
 
 \begin{multicols}{3}
@@ -70,6 +69,7 @@
 \normalsize \\
 \today, \currenttime
 
+\fontsize{7}{4}\selectfont
 \section{Tipologie di occhiali}
 \subsection{Occhiali 3D attivi di tipo shutter}
 \paragraph{Nomi alternativi} Active Shutter 3D System, Alternate Frame Sequencing, Alternate Image,
@@ -205,7 +205,13 @@ Microsoft ha cessato la produzione di Kinect nel 2017.
 \paragraph{Prezzo} $\sim$ 150 dollari
 
 \subsection{MYO}
-Sfruttare l'attività muscolare per fornire l'input del computer presenta molti vantaggi rispetto ai dispositivi simili a Kinect che utilizzano telecamere o sensori inerziali. Un nuovo dispositivo di input wireless basato sui gesti che funziona rilevando la firma elettrica delle contrazioni degli avambracci è ora disponibile per il pre-ordine da una nuova società a \$150. La fascia da braccio, soprannominata MYO, viene fornita con un'API per sviluppatori che consente di utilizzare completamente questa sofisticata apparecchiatura.
+Sfruttare l'attività muscolare per fornire l'input del computer presenta molti vantaggi rispetto ai dispositivi simili 
+a Kinect che utilizzano telecamere o sensori inerziali. Un nuovo dispositivo di input wireless basato sui gesti che 
+funziona rilevando la firma elettrica delle contrazioni degli avambracci è ora disponibile per il pre-ordine da una 
+nuova società.
+La fascia da braccio, soprannominata MYO, viene fornita con un'API per sviluppatori che consente di utilizzare completamente questa sofisticata apparecchiatura.
+\paragraph{Prezzo} 150 \$
+
 \subsection{Marcatori passivi}
 Sistemi ottici passivi che usano marcatori ricoperti da materiale retroreflettivo che riflette la luce generata da camere posizionate nell'ambiente.
 Aggiustando il threshold della camera è possibile riconoscere solo parti abbaglianti ignorando il resto della scena.
@@ -253,7 +259,7 @@ Google Glass è una marca di smart glass, un head mounted display (HMD) che ha l
 I Google Glass sono stati sviluppati da X (in precedenza Google X) e sono un paio di occhiali dotati di realtà 
 aumentata, tramite i quali è possibile visualizzare informazioni come sugli smartphone senza l'uso delle mani (hands-free). I Glass si operano tramite l'uso di comandi vocali.
 
-\paragraph{Prezzo} $\sim$ 100 CHF
+\paragraph{Prezzo} $\sim$ 1000 CHF
 \section{Head Mounted Display - VR}
 Un head-mounted display o HMD, è uno schermo montato sulla testa dello spettatore attraverso un casco ad hoc e può essere monoculare o binoculare.
 \subsection{Samsung Gear VR}
@@ -267,6 +273,10 @@ Ha insieme dei controller per interfacciarsi con il mondo virtuale.
 \subsection{HTC Vive}
 Questo dispositivo non solo permette di vedere il mondo virtuale mediante un visore ottico, ma grazie ad una nuova tecnologia chiamata "room scale" trasforma l'ambiente che circonda l'utente in uno spazio 3D in cui può muoversi quasi liberamente. Questa nuova tecnologia associata ad un tracking della testa preciso e a dei comandi di gioco che simulano il movimento delle mani, trasforma la realtà virtuale di HTC Vive in un'esperienza particolarmente immersiva, permettendo all'utente di interagire in maniera quasi completa col mondo di gioco.
 La versione PRO è dotato di display a risoluzione più elevata, ora con risoluzione 1440x1600 per-eye, insieme a una seconda fotocamera rivolta verso l'esterno, cuffie collegabili, un microfono per l'analisi dell'annullamento del rumore e un design rinnovato con una forma più "bilanciata", un peso più leggero e un quadrante di dimensionamento. Vive Pro utilizza connettori USB-C anziché USB-A. Comprende anche telecomandi che rintracciano il movimento delle mani, questi telecomandi hanno dei bottoni che servono per interfacciarsi con il mondo virtuale.
+\textbf{Vantaggi} Buone presentazioni
+\textbf{Svantaggi} Non è wireless e quindi i cavi sono ingombranti e necessità un computer attaccato.
+
+
 \paragraph{Prezzo}
 Edizione normale: 499 \$ \quad Edizione PRO: 1098 \$
 \subsection{Google Cardboard}
@@ -280,14 +290,43 @@ Può comprato con dei telecomandi chiamati Oculus Touch per detettare il movimen
 \paragraph{Display} PenTile OLED 2160x1200 (1080x1200 per eye) @ 90 Hz
 \paragraph{Prezzo} $\sim$ 399 \$
 
+\paragraph{Vantaggi}
+\begin{itemize}
+    \item Wireless
+    \item Basso Costo
+\end{itemize}
+\paragraph{Svantaggi}
+\begin{itemize}
+    \item Prestazioni, in quanto si appoggia ad un telefono e non a un pc.
+\end{itemize}
+
+\subsection{Google Cardboard}
+Google Cardboard è una visore per la realtà virtuale (VR) sviluppato da Google. 
+È un head-mounted display per smartphone. 
+Gli utenti possono creare il proprio visore da componenti semplici e a basso costo utilizzando le specifiche
+pubblicate da Google oppure acquistarne uno prefabbricato. 
+\paragraph{Prezzo} FREE o 8 CHF.
+
+\subsection{Oculus rift}
+L'Oculus Rift è il visore di realtà virtuale sviluppato da Oculus VR. Oculus Rift deve essere collegato a un computer per funzionare, un PC che deve avere una determinata potenza per gestire i giochi in realtà virtuale e i mondi virtuali proposti dagli sviluppatori. 
+Può comprato con dei telecomandi chiamati Oculus Touch per detettare il movimento delle mani e per dare all’utente un modo per comunicare le proprie azioni/scelte agli utenti.
+\paragraph{Vantaggi}Grafica vivida e fluida.
+\paragraph{Svantaggi}
+\begin{itemize}
+    \item Necessità di essere attaccato a un pc
+    \item Cavi ingombranti
+\end{itemize}
+
+\paragraph{Prezzo} 399 \$
 \section{Haptics}
 Dispositivo VR che da un feedback tattile che può anche essere una forza opposta che non ti fa chiudere la mano quando nel mondo virtuale prendi un oggetto.
 Un esempio di haptics che pero non ha la forza resistente è VR Glove chiamati Plexus che ha un feedback tattile. Prezzo 250\$.
 \subsection{Reactive Grip Motion Controller}
 Sono dei controller che hanno nel manico dei piatti magnetici che simulano le forze di frizione che si avrebbero quando terresti l'oggetto che nel mondo virtuale stai tenendo.
 \begin{center}
-    \begin{minipage}{0.5\columnwidth}
-        \includegraphics[width=\columnwidth]{reactiveGrip.png}
+    \begin{minipage}{\columnwidth}
+        \centering
+        \includegraphics[width=3cm]{reactiveGrip.png}
     \end{minipage}
 \end{center}
 \paragraph{Prezzo} 78\$
@@ -297,7 +336,8 @@ E' una fascetta che si mette in testa per sentire fisicamente un tocco in testa 
 Uguale a Haptic Mask, ma sento il feedback sul braccio.
 \subsection{Haptic Vest (bHaptics)}
 Uguale a Haptic Mask, ma sul busto.
-\paragraph{Il prezzo dell'intera suit è 549 \$} 
+\paragraph{Prezzo} Intera suit: 549 \$
+ 
 \section{Altre tecnologie}
 \subsection{ARToolKit}
 ARToolKit è una libreria di tracking open-source per la creazione di applicazioni di forte realtà
@@ -339,31 +379,21 @@ su una semisfera.
 \begin{itemize}
     \item Numero di vertici alto quindi più lenta.
 \end{itemize}
+\paragraph{Costo} Potenzialmente gratuita.
 
-% // QUESTO E' QUELLO CHE VA INSERITO:
-
-% DI QUESTI SOTTO POSSIAMO INSERIRE: il "giro che abbiamo fatto nel nostro progetto"
-% OpenVR (stereoscopic rendering 2 p.18)
-% SteamVR
-
-% DI QUESTI SOTTO POSSIAMO INSERIRE: qualche utilizzo reale
-% Object picking
-
-% VERIFICARE E AGGIUNGERE IL MINIMO FPS:
-% VR deve garantire almeno 60 frame per occhio (120 frame/secondo)
-
-% DA AGGIUNGERE SE NON C'E' GIA' NEL LEAP MOTION:
-% il leap motion può essere montato anche sopra gli headset in modo che vedi le mani nell’ambiente virtuale. Usa gli infrassossi, verificare numero camere
-
-% CERCARE QUALCOSA SU INTERNET:
-% Tuta di pura, la giacchetta (quando ti sparano)
-
-%AGGIUNGERE:
-% sensori film
-% parco giochi jonny
-% uforia
-% aggiungere nei motion capture le tecnologie per il cinema eccetera (brief history slide 20-21)
-% Dalla slide 28 alla 33 della brief history ci sono tutte le applicazioni della realtà virtuale che possiamo inserire
+\subsection{OpenVR e SteamVR}
+OpenVR è un software development kit ed API che permette di comunicare con dell'
+hardware per VR da codice e quindi inviare e ricevere dati. SteamVR è invece un 
+applicativo che permette la trasmissione di un ambiente VR che può fare da interfaccia
+tra OpenVR ed il visore effettivo.
+\subsubsection{TrinusVR Cardboard}
+TrinusVR fa da comunicatore tra il pc ed il telefono, si può scegliere SteamVR come 
+sorgente dei dati ed una volta connessi si avrà la trasmissione sul telefono.
+\paragraph{Server}
+Lato pc si usa TrinusVR Cardboard Server come software che farà sorgente e Server.
+\paragraph{Client} 
+Lato telefono usiamo TrinusCBVR come applicazione che riceverà i dati e trasmetterà
+le immagini (differenti per ogni occhio e quindi lo stereoscopic rendering).
 
 \end{multicols}
 \end{document}
