@@ -257,6 +257,16 @@ Un head-mounted display o HMD, è uno schermo montato sulla testa dello spettato
 \subsection{Samsung Gear VR}
 Samsung Gear VR è un supporto per display montato come google cardboard.
 Ha insieme dei controller per interfacciarsi con il mondo virtuale.
+Le sue prestazioni si basano sulle specifiche del telefono inserito al suo interno come schermo.
+\paragraph{Vantaggi:}
+\begin{itemize}
+    \item wireless
+    \item basso costo
+\end{itemize}
+\paragraph{Svantaggi:}
+\begin{itemize}
+    \item prestazioni, in quanto si appoggia a un telefono e non a un pc.
+\end{itemize}
 \subsection{Htc Vive}
 Questo dispositivo non solo permette di vedere il mondo virtuale mediante un visore ottico, ma grazie ad una nuova tecnologia chiamata "room scale"(tramite cubetti neri che detettano i movimenti del giocatore) trasforma l'ambiente che circonda l'utente in uno spazio 3D in cui può muoversi quasi liberamente. Questa nuova tecnologia associata ad un tracking della testa preciso e a dei comandi di gioco che simulano il movimento delle mani, trasforma la realtà virtuale di HTC Vive in un'esperienza particolarmente immersiva, permettendo all'utente di interagire in maniera quasi completa col mondo di gioco.
 La versione PRO è dotato di display a risoluzione più elevata, ora con risoluzione 1440x1600 per-eye, insieme a una seconda fotocamera rivolta verso l'esterno, cuffie collegabili, un microfono per l'analisi dell'annullamento del rumore e un design rinnovato con una forma più "bilanciata", un peso più leggero e un quadrante di dimensionamento. Vive Pro utilizza connettori USB-C anziché USB-A. Comprende anche telecomandi che rintracciano il movimento delle mani, questi telecomandi hanno dei bottoni che servono per interfacciarsi con il mondo virtuale.
@@ -269,7 +279,13 @@ Google Cardboard è una visore per la realtà virtuale (VR) sviluppato da Google
 \subsection{Oculus rift}
 L'Oculus Rift è il visore di realtà virtuale sviluppato da Oculus VR. Oculus Rift deve essere collegato a un computer per funzionare, un PC che deve avere una determinata potenza per gestire i giochi in realtà virtuale e i mondi virtuali proposti dagli sviluppatori. 
 Può comprato con dei telecomandi chiamati Oculus Touch per detettare il movimento delle mani e per dare all’utente un modo per comunicare le proprie azioni/scelte agli utenti.
-Prezzo: 399 \$
+\paragraph{Vantaggi:}Grafica vivida e fluida.
+\paragraph{Svantaggi:}
+\begin{itemize}
+    \item Necessità di essere attaccato a un pc
+    \item Cavi ingombranti
+\end{itemize}
+\paragraph{Prezzo: 399 \$}
 \section{Haptics}
 Dispositivo VR che da un feedback tattile che può anche essere una forza opposta che non ti fa chiudere la mano quando nel mondo virtuale prendi un oggetto.
 Un esempio di haptics che pero non ha la forza resistente è VR Glove chiamati Plexus che ha un feedback tattile. Prezzo 250\$.
@@ -325,12 +341,22 @@ su una semisfera.
     \item Numero di vertici alto quindi più lenta.
 \end{itemize}
 \paragraph{Costo} Potenzialmente gratuita.
-
+\subsection{OpenVR e SteamVR}
+OpenVR è un software development kit ed API che permette di comunicare con dell'
+hardware per VR da codice e quindi inviare e ricevere dati. SteamVR è invece un 
+applicativo che permette la trasmissione di un ambiente VR che può fare da interfaccia
+tra OpenVR ed il visore effettivo.
+\subsubsection{TrinusVR Cardboard}
+TrinusVR fa da comunicatore tra il pc ed il telefono, si può scegliere SteamVR come 
+sorgente dei dati ed una volta connessi si avrà la trasmissione sul telefono.
+\paragraph{Server}
+Lato pc si usa TrinusVR Cardboard Server come software che farà sorgente e Server.
+\paragraph{Client} 
+Lato telefono usiamo TrinusCBVR come applicazione che riceverà i dati e trasmetterà
+le immagini (differenti per ogni occhio e quindi lo stereoscopic rendering).
 % // QUESTO E' QUELLO CHE VA INSERITO:
 
 % DI QUESTI SOTTO POSSIAMO INSERIRE: il "giro che abbiamo fatto nel nostro progetto"
-% OpenVR (stereoscopic rendering 2 p.18)
-% SteamVR
 
 % DI QUESTI SOTTO POSSIAMO INSERIRE: qualche utilizzo reale
 % Object picking
