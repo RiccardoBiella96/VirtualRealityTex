@@ -121,7 +121,6 @@ Sistemi ottici passivi che usano marcatori ricoperti da materiale retroreflettiv
 Aggiustando il threshold della camera è possibile riconoscere solo parti abbaglianti ignorando il resto della scena.
 Più camere vedono lo stesso marcatore e più è possibile definire in maniera precisa la sua posizione nello spazio 3D (due camere minimo).
 Tale sistema implica tipicamente l'uso dalle 2 fino alle 48 camere per cui è parecchio costoso.
-<<<<<<< HEAD
 \subsection{Radio Frequency (RF)}
 \paragraph{Descrizione}
 I sistemi RF sono sistemi che rilevano la posizione dell'utilizzatore grazie a delle 
@@ -140,7 +139,6 @@ precisione del rilevamento arriva una precisione di $\sim$10mm.
 \end{itemize}
 \paragraph{Costo} $\sim$300.- CHF (135 Emittore, 175 Ricettore) 
 
-=======
 \subsection{Ascension Flock of Birds}
 Tecnologia magnetica DC(Direct Current) pulsata per un monitoraggio dei movimenti corporei. È immune da metalli conduttivi non magnetici, è
 possibile utilizzare questo tracker intorno all'acciaio inossidabile, al titanio e all'alluminio senza errori di misurazione.
@@ -154,7 +152,6 @@ possibile utilizzare questo tracker intorno all'acciaio inossidabile, al titanio
 \end{itemize}
 \paragraph{Costo}
 Prezzo: 1500 franchi circa
->>>>>>> 20b011b23bf19ef431422025fa4a918e4b68d3b4
 \section{Head mounted display - Augmented Reality}
 \subsection{Microsoft Hololens}
 Il visore si connette al proprio dispositivo mobile o ad un computer con sistema operativo Windows 10 per poter sincronizzare e avviare il dispositivo HoloLens.
@@ -189,6 +186,43 @@ Un esempio di haptics che pero non ha la forza resistente è VR Glove chiamati P
 \subsection{Artoolkit}
 ARToolKit is an open-source computer tracking library for creation of strong augmented reality applications that overlay virtual imagery on the real world.
 Prezzo: 100\$
+\subsection{Skybox}
+\paragraph{Descrizione} 
+Una Skybox è una tipologia speciale di texture che viene applicata all'iterno di un 
+cubo, nel quale sarà contenuta la scena. Si utilizza per dare una texture ad elementi
+esterni o irraggiungibili dall'utente. 
+\paragraph{Vantaggi}
+\begin{itemize}
+    \item Facile da implementare.
+    \item Facile codificare le coordinate delle texture anche a mano.
+    \item Facile e veloce da disegnare.
+\end{itemize}
+\paragraph{Svantaggi}
+\begin{itemize}
+    \item Si possono avere problemi con la prospettiva e soprattuto con gli angoli.
+    \item Può essere difficile disegnare una Skybox del quale non si noti il cubo.
+\end{itemize}
+\paragraph{Costo} Potenzialmente gratuita.
+
+
+\subsection{Skydome}
+\paragraph{Descrizione} 
+Una Skydome è come una Skybox ma invece che essere applicata su un cubo viene applicata
+su una semisfera.
+\paragraph{Vantaggi}
+\begin{itemize}
+    \item È relativamente semplice disegnarla.
+    \item Flessibile perchè alto numero di vertici.
+    \item Meno problemi di prospettiva 
+\end{itemize}
+\paragraph{Svantaggi}
+\begin{itemize}
+    \item Numero di vertici alto quindi più lenta.
+\end{itemize}
+\paragraph{Costo} Potenzialmente gratuita.
+
+
+Slower to draw with far more vertices
 
 % // QUESTO E' QUELLO CHE VA INSERITO:
 
@@ -197,8 +231,6 @@ Prezzo: 100\$
 % SteamVR
 
 % DI QUESTI SOTTO POSSIAMO INSERIRE: qualche utilizzo reale
-% Skybox
-% Skydome
 % Object picking
 
 % VERIFICARE E AGGIUNGERE IL MINIMO FPS:
