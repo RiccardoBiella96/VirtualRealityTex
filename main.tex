@@ -233,12 +233,23 @@ su una semisfera.
     \item Numero di vertici alto quindi più lenta.
 \end{itemize}
 \paragraph{Costo} Potenzialmente gratuita.
-
+\subsection{OpenVR e SteamVR}
+OpenVR è un software development kit ed API che permette di comunicare con dell'
+hardware per VR da codice e quindi inviare e ricevere dati. SteamVR è invece un 
+applicativo che permette la trasmissione di un ambiente VR che può fare da interfaccia
+tra OpenVR ed il visore effettivo.
+\subsubsection{TrinusVR Cardboard}
+TrinusVR fa da comunicatore tra il pc ed il telefono, si può scegliere SteamVR come 
+sorgente dei dati ed una volta connessi si avrà la trasmissione sul telefono.
+\paragraph{Server}
+Lato pc si usa TrinusVR Cardboard Server come software che farà sorgente e Server.
+\paragraph{Client} 
+Lato telefono usiamo TrinusCBVR come applicazione che riceverà i dati e trasmetterà
+le immagini (differenti per ogni occhio e quindi lo stereoscopic rendering).
 % // QUESTO E' QUELLO CHE VA INSERITO:
 
 % DI QUESTI SOTTO POSSIAMO INSERIRE: il "giro che abbiamo fatto nel nostro progetto"
-% OpenVR (stereoscopic rendering 2 p.18)
-% SteamVR
+
 
 % DI QUESTI SOTTO POSSIAMO INSERIRE: qualche utilizzo reale
 % Object picking
